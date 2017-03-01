@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/opendnd/compendia#readme",
   "dependencies": {
+    "commander": "^2.9.0",
     "hazel-wiki": "^1.1.7"
   }
 }
