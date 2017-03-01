@@ -1,6 +1,6 @@
 {
   "name": "compendia",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tool for generating your world's compendium",
   "main": "compendia.js",
   "scripts": {
@@ -17,9 +17,6 @@
     "url": "https://github.com/opendnd/compendia/issues"
   },
   "homepage": "https://github.com/opendnd/compendia#readme",
-  "bugs": {
-    "url": "https://github.com/opendnd/compendia/issues"
-  },
   "bin": {
     "compendia": "./bin/compendia"
   },
