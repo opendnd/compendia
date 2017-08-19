@@ -1,9 +1,9 @@
 'use strict';
 
-var path = require('path');
-var rootDir = path.join(__dirname, '..');
+const path = require('path');
+const rootDir = path.join(__dirname, '..');
 
-var config = {
+const config = {
 
   // Your site title (format: page_title - site_title)
   site_title: 'World Compendium',
