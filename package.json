@@ -4,7 +4,7 @@
   "description": "A tool for generating your world's compendium",
   "main": "compendia.js",
   "scripts": {
-    "start": "node compendia.js",
+    "start": "node lib/compendia.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
