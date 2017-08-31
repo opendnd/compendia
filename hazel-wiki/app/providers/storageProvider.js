@@ -166,6 +166,36 @@ class StorageProvider {
     }
 
     /**
+      * Handles reading a file from uploads
+      */
+    readFile(file) {
+        if (!file) return null;
+
+        let filePath = path.join(this._config.uploads_dir, file);
+
+        // try to read the file on disk
+        try {
+            let fileContent = fs.readFileSync(filePath);
+            return fileContent;
+        } catch (e) {
+            // error finding file, return null
+            console.log("Tried to open file: " + file + ". ");
+            return null;
+        }
+    }
+
+    /**
+      * Handles retrieving the filePath in uploads
+      */
+    getFilePath(file) {
+        if (!file) return null;
+
+        let filePath = path.join(this._config.uploads_dir, file);
+
+        return filePath;
+    }
+
+    /**
      * Handles converting the provided slug string
      * to a title with spaces and capitalization
      */
