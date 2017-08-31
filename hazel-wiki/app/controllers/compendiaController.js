@@ -1,7 +1,9 @@
 "use strict";
 
 const CompendiaViewModel = require('../models/homeViewModel');
+
 const avataria = require('avataria');
+const nomina = require('nomina');
 
 const _ = require('lodash');
 
@@ -20,8 +22,12 @@ class CompendiaController {
   _bindRoutes() {
     // /compendia
     this._server.get("/compendia", this._auth, this.index.bind(this));
+
     // /compendia/avataria
     this._server.post("/compendia/avataria", this._auth, this.avataria.bind(this));
+
+    // /compendia/nomina
+    this._server.post("/compendia/nomina", this._auth, this.nomina.bind(this));
   }
 
   /**
@@ -52,6 +58,25 @@ class CompendiaController {
       res.send({
         base64,
       })
+    });
+  }
+
+  /**
+   * Respond with the name
+   */
+  nomina(req, res, next) {
+    const { body } = req;
+    const { gender, type } = body;
+    const options = {
+      gender,
+      type,
+    };
+
+    // generate from avataria
+    const output = nomina(options);
+
+    res.send({
+      output,
     });
   }
 }

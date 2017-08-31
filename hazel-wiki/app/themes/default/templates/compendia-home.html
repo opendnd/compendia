@@ -54,10 +54,27 @@
         <div class="row">
             <div class="col-sm-12">
                 <h2>Nomina</h2>
+                <label>
+                    <span>Category</span>
+                    <select class="form-control" id="nomina-type">
+                        <option value=""></option>
+                        <option value="asian">Asian</option>
+                        <option value="classical">Classical</option>
+                        <option value="medieval">Medieval</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Gender</span>
+                    <select class="form-control" id="nomina-gender">
+                        <option value=""></option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </label>
                 <div class="form-group">
                     <input type="text" class="form-control" id="nomina-output" />
                 </div>
-                <button class="btn btn-primary">Generate</button>
+                <button class="btn btn-primary" id="nomina">Generate</button>
             </div>
         </div>
     </div>
