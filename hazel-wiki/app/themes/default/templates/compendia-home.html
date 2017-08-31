@@ -29,10 +29,26 @@
         <div class="row">
             <div class="col-sm-12">
                 <h2>Avataria</h2>
+                <label>
+                    <span>Species</span>
+                    <select class="form-control" id="avataria-species">
+                        <option value=""></option>
+                        <option value="human">Human</option>
+                        <option value="dragonborn">Dragonborn</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Gender</span>
+                    <select class="form-control" id="avataria-gender">
+                        <option value=""></option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </label>
                 <figure class="avataria">
                     <img id="avataria-output" width="300" height="300" style="background-color: #333;" />
                 </figure>
-                <button class="btn btn-primary">Generate</button>
+                <button class="btn btn-primary" id="avataria">Generate</button>
             </div>
         </div>
         <div class="row">
