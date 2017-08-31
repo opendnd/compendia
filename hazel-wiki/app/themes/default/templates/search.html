@@ -1,0 +1,48 @@
+<!-- View Object 
+{
+    title = [string] Current title,
+    searchTerm = [string] Current search term,
+    searchResults = [array] Collection of result documents,
+    config = [config] Global config
+}
+-->
+
+<div class="before-main-wrapper">
+    <div class="header-wrapper">
+        <div class="container header-left">
+            <div class="header-titles">
+                <h1>Search Results for "<%= searchTerm %>"</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container wrap main-section" id="wrap-main-section">
+    <div id="content" class="content">
+        <div class="row bg">
+            <main class="main col-sm-8"  role="main">
+                <% if(searchResults && searchResults.length > 0){ %>
+                    <% for(var i = 0; i < searchResults.length; i++){ var result = searchResults[i]; %>
+                    <article class="post type-post">
+                        <header>
+                            <h2 class="entry-title">
+                                <a href="<%= result.slug %>"><%= result.title %></a>
+                            </h2>
+                        </header>
+                        <div class="entry-summary">
+                            <%- result.html %>
+                            <div class="clearfix"></div>
+                        </div>
+                    </article>
+                    <% } %>
+                <% } else { %>
+                    <p> No results found for "<%= searchTerm %>"</p>
+                <% } %>
+                
+                <!-- PAGINATION -->
+            </main>
+            <!-- /.main -->
+        </div>
+    </div>
+    <!-- /.content -->
+</div>
+<!-- /.wrap -->

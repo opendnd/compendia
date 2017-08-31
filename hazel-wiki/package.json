@@ -1,0 +1,58 @@
+{
+  "name": "hazel-wiki",
+  "version": "1.1.7",
+  "description": "Fast, simple, Markdown powered wiki knowledge base",
+  "author": "Wade Kallhoff <w@wmk.io>",
+  "contributors": [
+    "Egor Kuryanovich <me@sontan.name> (http://sontan.name)"
+  ],
+  "license": "GPL-3.0",
+  "repository": "wkallhof/hazel",
+  "homepage": "https://github.com/wkallhof/Hazel",
+  "keywords": [
+    "hazel",
+    "hazel-wiki",
+    "wiki",
+    "markdown",
+    "knowledge",
+    "base"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "base-64": "0.1.0",
+    "basic-auth": "1.0.3",
+    "body-parser": "1.15.0",
+    "ejs": "2.4.1",
+    "express": "4.13.4",
+    "express-ejs-layouts": "2.0.0",
+    "extend": "3.0.0",
+    "lodash": "4.6.1",
+    "lunr": "0.7.0",
+    "lunr-languages": "0.0.4",
+    "marked": "0.3.5",
+    "multer": "^1.1.0",
+    "request": "2.69.0",
+    "serve-favicon": "2.3.0",
+    "underscore.string": "^2.3.3"
+  },
+  "devDependencies": {
+    "istanbul": "0.4.2",
+    "mocha": "2.3.4",
+    "chai": "3.5.0"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "app/"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./example/server.js",
+    "test": "mocha",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha",
+    "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly"
+  }
+}
