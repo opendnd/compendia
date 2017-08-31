@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "cd hazel-wiki && npm i",
     "start": "node lib/compendia.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec 'test/**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,9 @@
   },
   "dependencies": {
     "commander": "^2.9.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
   }
 }
