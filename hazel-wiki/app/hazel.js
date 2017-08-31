@@ -47,7 +47,7 @@ class Hazel {
 
         /* Controllers */
         this._homeController        = new HomeController(this._server, this._config, authMethod, this._documentRepository, this._searchProvider, this._analyticsService);
-        this._compendiaController   = new CompendiaController(this._server, this._config, authMethod, this._documentRepository, this._searchProvider, this._analyticsService);
+        this._compendiaController   = new CompendiaController(this._server, this._config, authMethod, this._documentRepository, this._searchProvider, this._analyticsService, this._storageProvider);
         this._tagController         = new TagController(this._server, this._config, authMethod, this._documentRepository, this._searchProvider, this._analyticsService);
         this._searchController      = new SearchController(this._server, this._config, authMethod, this._searchProvider);
         this._documentController    = new DocumentController(this._server, this._config, authMethod, this._documentRepository, this._analyticsService, this._storageProvider, this._searchProvider, this._documentParserUtility);

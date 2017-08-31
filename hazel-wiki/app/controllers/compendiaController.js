@@ -4,17 +4,19 @@ const CompendiaViewModel = require('../models/homeViewModel');
 
 const avataria = require('avataria');
 const nomina = require('nomina');
+const dynastia = require('dynastia');
 
 const _ = require('lodash');
 
 class CompendiaController {
-  constructor(server, config, authMethod, documentRepository, searchProvider, analyticsService) {
+  constructor(server, config, authMethod, documentRepository, searchProvider, analyticsService, storageProvider) {
     this._documents = documentRepository;
     this._auth = authMethod;
     this._server = server;
     this._config = config;
     this._searchProvider = searchProvider;
     this._analyticsService = analyticsService;
+    this._storageProvider = storageProvider;
 
     this._bindRoutes();
   }
@@ -28,6 +30,9 @@ class CompendiaController {
 
     // /compendia/nomina
     this._server.post("/compendia/nomina", this._auth, this.nomina.bind(this));
+
+    // /compendia/uploads
+    this._server.post("/compendia/upload", this._auth, this.upload.bind(this));
   }
 
   /**
@@ -78,6 +83,34 @@ class CompendiaController {
     res.send({
       output,
     });
+  }
+
+  /**
+   * Import the file
+   */
+  upload(req, res, next) {
+    var self = this;
+
+    this._storageProvider.storeFile(req, res, function(err) {
+      if(err) {
+        return res.status(422).send(err);
+      }
+
+      // import dynastia
+      if (req.file.filename.indexOf('.dyn') >= 0) {
+        self._dynastia(req.file);
+      }
+
+      return res.status( 200 ).send(req.file.filename);
+    });
+  }
+
+  /**
+    * Parse through a dynastia file
+    */
+  _dynastia(file) {
+    const dynasty = dynastia.loader(file.path);
+    console.log(dynasty);
   }
 }
 

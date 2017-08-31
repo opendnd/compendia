@@ -25,6 +25,7 @@
     "base-64": "0.1.0",
     "basic-auth": "1.0.3",
     "body-parser": "1.15.0",
+    "dynastia": "^0.2.3",
     "ejs": "2.4.1",
     "express": "4.13.4",
     "express-ejs-layouts": "2.0.0",
