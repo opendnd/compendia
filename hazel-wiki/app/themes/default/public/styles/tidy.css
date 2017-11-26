@@ -935,6 +935,7 @@ aside .widget h3 {
 
 .content img {
   max-width: 100%;
+  padding: 0.5em;
 }
 
 .content .btn:hover i {
