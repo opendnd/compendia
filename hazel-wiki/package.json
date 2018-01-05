@@ -27,7 +27,7 @@
     "body-parser": "1.15.0",
     "dominia": "^0.2.0",
     "dynastia": "^0.2.3",
-    "ejs": "2.4.1",
+    "ejs": "^2.5.5",
     "express": "4.13.4",
     "express-ejs-layouts": "2.0.0",
     "extend": "3.0.0",
